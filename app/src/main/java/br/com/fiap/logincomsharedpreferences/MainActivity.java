@@ -1,5 +1,6 @@
 package br.com.fiap.logincomsharedpreferences;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,14 +36,22 @@ public class MainActivity extends AppCompatActivity {
         String pass = senha.getText().toString();
 
         if(usuario.trim().equals("fiap") && pass.trim().equals("123")){
+
+            SharedPreferences.Editor e = sp.edit();
             if(SalvarSenha.isChecked()){
-                SharedPreferences.Editor e = sp.edit();
                 e.putString("usuario", usuario);
                 e.putString("senha", pass);
-                e.commit();
+            } else {
+                e.remove("usuario");
+                e.remove("senha");
             }
-            return;
+            e.commit();
+
             // lógica para abrir outra activity
+            Intent it = new Intent(this, DadosActivity.class);
+            startActivity(it);
+
+            return;
         }
         Toast.makeText(this, R.string.usuario_incorreto, Toast.LENGTH_SHORT).show();
 
