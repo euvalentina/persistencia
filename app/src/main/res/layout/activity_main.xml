@@ -37,7 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/SalvarSenha"
-        android:text="@string/Salvar_senha"/>
+        android:text="@string/Salvar_senha"
+        android:checked="true" />
 
     <Button
         android:layout_width="match_parent"

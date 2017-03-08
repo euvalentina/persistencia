@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         SalvarSenha = (CheckBox) findViewById(R.id.SalvarSenha);
 
         sp = getPreferences(MODE_PRIVATE);
+
+        login.setText(sp.getString("usuario", ""));
+        senha.setText(sp.getString("senha", ""));
     }
 
     public void login(View view) {
