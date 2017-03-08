@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Login com SharedPreferences</string>
+    <string name="Login">login</string>
+    <string name="Senha">Senha</string>
+    <string name="Salvar_senha">Salvar senha</string>
+    <string name="usuario_incorreto">usuário incorreto</string>
 </resources>
